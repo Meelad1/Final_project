@@ -49,8 +49,8 @@
     
       <h3> Importing Necessary Packages </h3>
       <pre><code>
-      ## Need all of these imports not only for the visualization but to convert the csv to a dataframe to be able to use the
-      ## data in code. 
+      The code below was implented to use all the different packages to allow me to create visualization for my data
+      and to be able to convert the .csv files.
 
 import csv
 import pandas as pd
@@ -61,6 +61,13 @@ import matplotlib.pyplot as plt</pre></code>
     
         
       <h4> The Structure </h4>
+      The 2014 dataset was approximately 1.07 Kilobyte encoded as a .csv file. I read the file line by line and decided to iterate 
+      through the csv_2014 file, and append the teams, goals for, goals against into list_2014 as a dictionary for speed optimization. 
+      I would open the csv_2014 file and use the csv.reader as an object and place them into a list as a dictionary.
+      The 2018 dataset was approximately 1.03 Kilobyte encoded as a .csv file. I read the file line by line and did the same iteration 
+      for speed optimization and appending the variables that I am analyzing by putting them into list_2018 as a dictionary.
+
+      
   </body>
   
 </html>
