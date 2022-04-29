@@ -19,9 +19,9 @@
         <h4 id="name"> Meelad Doroodchi </h4>
 
         <p id="description"> 
-          I wanted to analyze the most recent World Cup(2018) 
-          with the 2022 World cup looming this winter, but I 
-          wanted to compare the total # of goals scored in the 
+          I wanted to analyze the two most recent 
+          World Cup(2018 and 2014) with the 2022 World cup looming this winter, 
+          but I wanted to compare the total # of goals scored in the 
           2018 World Cup to the total scored in 2014 to see the
           difference and what possibly could cause that difference. 
           Each path during a World Cup run is different and 
@@ -48,9 +48,10 @@
       
     
       <h3> Importing Necessary Packages </h3>
+      <p> The code below was implented to use all the different packages to allow me to create visualization for my data
+      and to be able to convert the .csv files.</p>
       <pre><code>
-      The code below was implented to use all the different packages to allow me to create visualization for my data
-      and to be able to convert the .csv files.
+
 
 import csv
 import pandas as pd
@@ -61,11 +62,43 @@ import matplotlib.pyplot as plt</pre></code>
     
         
       <h4> The Structure </h4>
-      The 2014 dataset was approximately 1.07 Kilobyte encoded as a .csv file. I read the file line by line and decided to iterate 
+      <p> The 2014 dataset was approximately 1.07 Kilobyte encoded as a .csv file. I read the file line by line and decided to iterate 
       through the csv_2014 file, and append the teams, goals for, goals against into list_2014 as a dictionary for speed optimization. 
       I would open the csv_2014 file and use the csv.reader as an object and place them into a list as a dictionary.
       The 2018 dataset was approximately 1.03 Kilobyte encoded as a .csv file. I read the file line by line and did the same iteration 
-      for speed optimization and appending the variables that I am analyzing by putting them into list_2018 as a dictionary.
+      for speed optimization and appending the variables that I am analyzing by putting them into list_2018 as a dictionary.</p>
+    
+      <pre><code>2014 
+    file = open('FIFA - 2014.csv')
+    csv_2014 = csv.reader(file)
+    header = next(csv_2014)
+    list_2014 = []
+    
+    for row in csv_2014:
+        total = row[6] + row[7]
+        dic = { 
+            'team' : row[1],
+            'goal_for' : row[6], 
+            'goal_against': row[7], 
+            'total' : abs(int(row[6]) + int(row[7]))
+        }
+        list_2014.append(dic)</pre></code>
+      
+    <pre><code>2018
+    file = open('FIFA - 2018.csv')
+    csv_2018 = csv.reader(file)
+    header = next(csv_2018)
+    list_2018 = []
+    
+    for row in csv_2018:
+        total = row[6] + row[7]
+        dic = { 
+            'team' : row[1],
+            'goal_for' : row[6], 
+            'goal_against': row[7], 
+            'total' : abs(int(row[6]) + int(row[7]))
+        }
+        list_2018.append(dic)
 
       
   </body>
