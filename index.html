@@ -83,40 +83,9 @@ import matplotlib.pyplot as plt</code></pre>
       The 2018 dataset was approximately 1.03 Kilobyte encoded as a .csv file. I read the file line by line and did the same iteration 
       for speed optimization and appending the variables that I am analyzing by putting them into list_2018 as a dictionary.</p>
       
-      <img src="2014_iteration.png" alt="picture of code">
+      <img src="2014_iteration.png" alt="picture of code" style="width: 300px; height: 300px;">
 
     
-      <pre><code>2014 
-    file = open('FIFA - 2014.csv')
-    csv_2014 = csv.reader(file)
-    header = next(csv_2014)
-    list_2014 = []
-    
-    for row in csv_2014:
-        total = row[6] + row[7]
-        dic = { 
-            'team' : row[1],
-            'goal_for' : row[6], 
-            'goal_against': row[7], 
-            'total' : abs(int(row[6]) + int(row[7]))
-        }
-        list_2014.append(dic)</code></pre>
-      
-    <pre><code>2018
-    file = open('FIFA - 2018.csv')
-    csv_2018 = csv.reader(file)
-    header = next(csv_2018)
-    list_2018 = []
-    
-    for row in csv_2018:
-        total = row[6] + row[7]
-        dic = { 
-            'team' : row[1],
-            'goal_for' : row[6], 
-            'goal_against': row[7], 
-            'total' : abs(int(row[6]) + int(row[7]))
-        }
-        list_2018.append(dic)</code></pre>
 
       
   </body>
